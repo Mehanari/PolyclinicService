@@ -7,7 +7,7 @@ import server.service.DummyPolyclinicService;
 
 public class PolyclinicServer {
     public static final Object implementor = new DummyPolyclinicService();
-    public static final String ADDRESS = "http://localhost:9000/books";
+    public static final String ADDRESS = "http://localhost:9000/polyclinic";
 
     public static void main(String[] args) {
         System.out.println("Starting Server");
