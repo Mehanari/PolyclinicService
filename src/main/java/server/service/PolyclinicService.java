@@ -19,40 +19,48 @@ public interface PolyclinicService {
     @WebMethod()
     @WebResult(name = "medicalCard", targetNamespace=Const.MEDICAL_CARD_NS)
     public MedicalCard getMedicalCard(@WebParam(name="cardNumber")
-                                          @XmlElement(required = true) int cardNumber);
+                                          @XmlElement(required = true) int cardNumber,
+                                      @WebParam(name="userToken", header = true) String userToken);
 
     @WebMethod()
     public int addMedicalCard(@WebParam(name="medicalCard", targetNamespace = Const.MEDICAL_CARD_NS)
-                                  @XmlElement(required = true) MedicalCard medicalCard);
+                                  @XmlElement(required = true) MedicalCard medicalCard,
+                              @WebParam(name="userToken", header = true) String userToken);
 
     //Appointments methods
     @WebMethod()
     @WebResult(name ="appointment", targetNamespace = Const.APPOINTMENT_NS)
     public Collection<Appointment> getAppointmentsForPatient(@WebParam(name="cardNumber")
-                                                                 @XmlElement(required = true) int cardNumber);
+                                                                 @XmlElement(required = true) int cardNumber,
+                                                             @WebParam(name="userToken", header = true) String userToken);
 
     @WebMethod()
     public int addAppointmentForPatient(@WebParam(name="appointment", targetNamespace = Const.APPOINTMENT_NS)
-                                            @XmlElement(required = true) Appointment appointment);
+                                            @XmlElement(required = true) Appointment appointment,
+                                        @WebParam(name="userToken", header = true) String userToken);
 
     @WebMethod()
     @WebResult(name="appointment", targetNamespace = Const.APPOINTMENT_NS)
     public Appointment updateAppointmentTime(@WebParam(name="appointmentId") @XmlElement(required = true) int appointmentId,
                                              @WebParam(name="startTime") @XmlElement(required = true) XMLGregorianCalendar startTime,
-                                             @WebParam(name="endTime") @XmlElement(required = true) XMLGregorianCalendar endTime);
+                                             @WebParam(name="endTime") @XmlElement(required = true) XMLGregorianCalendar endTime,
+                                             @WebParam(name="userToken", header = true) String userToken);
 
     @WebMethod()
     @WebResult(name="appointment", targetNamespace = Const.APPOINTMENT_NS)
-    public Appointment deleteAppointment(@WebParam(name="appointmentId") @XmlElement(required = true) int appointmentId);
+    public Appointment deleteAppointment(@WebParam(name="appointmentId") @XmlElement(required = true) int appointmentId,
+                                         @WebParam(name="userToken", header = true) String userToken);
 
     //Appointment results methods
     @WebMethod()
     public int addAppointmentResult(@WebParam(name="appointmentResult", targetNamespace = Const.APPOINTMENT_RESULT_NS)
-                                        @XmlElement(required = true) AppointmentResult appointmentResult);
+                                        @XmlElement(required = true) AppointmentResult appointmentResult,
+                                    @WebParam(name="userToken", header = true) String userToken);
 
     @WebMethod()
     @WebResult(name="appointmentResult", targetNamespace = Const.APPOINTMENT_RESULT_NS)
     public AppointmentResult updateAppointmentResult(@WebParam(name="appointmentResult", targetNamespace = Const.APPOINTMENT_RESULT_NS)
-                                                         @XmlElement(required = true) AppointmentResult appointmentResult);
+                                                         @XmlElement(required = true) AppointmentResult appointmentResult,
+                                                     @WebParam(name="userToken", header = true) String userToken);
 
 }
