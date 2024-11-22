@@ -5,8 +5,8 @@
            targetNamespace="http://it.nure.ua/clinic/medicalCard"
            xmlns="http://it.nure.ua/clinic/medicalCard"
            elementFormDefault="qualified">
-    <xs:import namespace="http://it.nure.ua/clinic/appointment" schemaLocation="../appointment/appointment.xsd"/>
-    <xs:import namespace="http://it.nure.ua/clinic/appointmentResult" schemaLocation="../appointmentResult/appointmentResult.xsd"/>
+    <xs:import namespace="http://it.nure.ua/clinic/appointment" schemaLocation="appointment.xsd"/>
+    <xs:import namespace="http://it.nure.ua/clinic/appointmentResult" schemaLocation="appointmentResult.xsd"/>
 
     <xs:element name="medicalCard">
         <xs:complexType>

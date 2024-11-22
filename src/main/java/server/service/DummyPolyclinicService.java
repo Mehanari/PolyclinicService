@@ -21,6 +21,7 @@ public class DummyPolyclinicService implements PolyclinicService{
         MedicalCard medicalCard = null;
         try{
             medicalCard = parser.loadMedicalCard("src/main/resources/medicalCard.xml");
+            System.out.println(medicalCard.getPersonalInfo().getFirstName());
         }
         catch (Exception e){
             System.out.println(e);
