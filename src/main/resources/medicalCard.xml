@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="medicalCard.xsl"?>
+<tns:medicalCard xmlns:tns="http://it.nure.ua/clinic/medicalCard"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:app="http://it.nure.ua/clinic/appointment"
+                 xmlns:res="http://it.nure.ua/clinic/appointmentResult"
+                 xsi:schemaLocation="http://it.nure.ua/clinic/medicalCard  medicalCard.xsd">
+    <tns:cardNumber>12345</tns:cardNumber>
+    <tns:personalInfo>
+        <tns:firstName>Vladyslav</tns:firstName>
+        <tns:lastName>Puzanov</tns:lastName>
+        <tns:patronymic>Viktorovich</tns:patronymic>
+        <tns:birthDate>2004-01-28</tns:birthDate>
+        <tns:gender>Male</tns:gender>
+    </tns:personalInfo>
+    <tns:workplace>Nure</tns:workplace>
+    <tns:address>Nope</tns:address>
+    <tns:email>vladyslav.puzanov@nure.ua</tns:email>
+    <tns:phone>+380988687313</tns:phone>
+    <tns:identification>
+        <tns:idCardNumber>12345</tns:idCardNumber>
+    </tns:identification>
+    <tns:appointments>
+        <app:appointment id="1">
+            <app:date>2024-10-20</app:date>
+            <app:startTime>09:00:00</app:startTime>
+            <app:endTime>09:30:00</app:endTime>
+            <app:patientCardNumber>12345</app:patientCardNumber>
+            <app:roomNumber>101</app:roomNumber>
+        </app:appointment>
+        <app:appointment id="2">
+            <app:date>2024-09-20</app:date>
+            <app:startTime>09:00:00</app:startTime>
+            <app:endTime>09:30:00</app:endTime>
+            <app:patientCardNumber>12345</app:patientCardNumber>
+            <app:roomNumber>112</app:roomNumber>
+        </app:appointment>
+        <app:appointment id="3">
+            <app:date>2024-11-15</app:date>
+            <app:startTime>10:00:00</app:startTime>
+            <app:endTime>10:30:00</app:endTime>
+            <app:patientCardNumber>12345</app:patientCardNumber>
+            <app:roomNumber>3</app:roomNumber>
+        </app:appointment>
+    </tns:appointments>
+    <tns:results>
+        <res:appointmentResult id="1" appointmentId="101">
+            <res:reason>Consultation due to chronic headaches</res:reason>
+            <res:anamnesis>The patient has had recurring headaches for the past 5 years</res:anamnesis>
+            <res:objectively>The patient reports frequent dizziness and sensitivity to light</res:objectively>
+            <res:radiationDose>0</res:radiationDose>
+            <res:diagnosis>Migraine with aura</res:diagnosis>
+            <res:prescription>Ibuprofen 400mg as needed for pain</res:prescription>
+            <res:recommendations>Increase hydration and rest during episodes</res:recommendations>
+            <res:actions>Prescribed medication and referred to a neurologist</res:actions>
+            <res:conclusion>Further investigation required if symptoms persist</res:conclusion>
+            <res:appointmentTime>10:00:00</res:appointmentTime>
+            <res:appointmentDate>2024-10-20</res:appointmentDate>
+            <res:patientCardNumber>12345</res:patientCardNumber>
+            <res:doctorID>567</res:doctorID>
+        </res:appointmentResult>
+        <res:appointmentResult id="2" appointmentId="101">
+            <res:reason>Consultation due to stomach pain</res:reason>
+            <res:anamnesis>The patient has had a slight stomach paint for the past 2 weeks</res:anamnesis>
+            <res:objectively>The patient reports slight burning pain.</res:objectively>
+            <res:radiationDose>0</res:radiationDose>
+            <res:diagnosis>Gastritis</res:diagnosis>
+            <res:prescription>Ibuprofen 400mg as needed for pain</res:prescription>
+            <res:recommendations>Increase hydration and rest during episodes</res:recommendations>
+            <res:actions>Prescribed medication and referred to a gastrologyst</res:actions>
+            <res:conclusion>Further investigation required if symptoms persist</res:conclusion>
+            <res:appointmentTime>11:00:00</res:appointmentTime>
+            <res:appointmentDate>2024-11-20</res:appointmentDate>
+            <res:patientCardNumber>12345</res:patientCardNumber>
+            <res:doctorID>1</res:doctorID>
+        </res:appointmentResult>
+    </tns:results>
+</tns:medicalCard>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="appointment.xsl"?>
+<tns:appointment xmlns:tns="http://it.nure.ua/clinic/appointment"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://it.nure.ua/clinic/appointment appointment.xsd"
+                 id="1">
+    <tns:date>2024-10-20</tns:date>
+    <tns:startTime>07:00:00</tns:startTime>
+    <tns:endTime>09:30:00</tns:endTime>
+    <tns:patientCardNumber>12345</tns:patientCardNumber>
+    <tns:roomNumber>101</tns:roomNumber>
+</tns:appointment>

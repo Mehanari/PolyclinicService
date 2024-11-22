@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://it.nure.ua/clinic/appointment"
+           xmlns="http://it.nure.ua/clinic/appointment"
+           elementFormDefault="qualified">
+
+    <xs:element name="appointment">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="date" type="xs:date"/>
+                <xs:element name="startTime" type="xs:time"/>
+                <xs:element name="endTime" type="xs:time"/>
+                <xs:element name="patientCardNumber" type="xs:int"/>
+                <xs:element name="roomNumber" type="xs:int"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:int" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="appointmentResult.xsl"?>
+<tns:appointmentResult xmlns:tns="http://it.nure.ua/clinic/appointmentResult"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://it.nure.ua/clinic/appointmentResult  appointmentResult.xsd"
+                   id="1" appointmentId="101">
+    <tns:reason>Consultation due to chronic headaches</tns:reason>
+    <tns:anamnesis>The patient has had recurring headaches for the past 5 years</tns:anamnesis>
+    <tns:objectively>The patient reports frequent dizziness and sensitivity to light</tns:objectively>
+    <tns:radiationDose>0.123</tns:radiationDose>
+    <tns:diagnosis>Migraine with aura</tns:diagnosis>
+    <tns:prescription>Ibuprofen 400mg as needed for pain</tns:prescription>
+    <tns:recommendations>Increase hydration and rest during episodes</tns:recommendations>
+    <tns:actions>Prescribed medication and referred to a neurologist</tns:actions>
+    <tns:conclusion>Further investigation required if symptoms persist</tns:conclusion>
+    <tns:appointmentTime>10:00:00</tns:appointmentTime>
+    <tns:appointmentDate>2024-10-20</tns:appointmentDate>
+    <tns:patientCardNumber>12345</tns:patientCardNumber>
+    <tns:doctorID>567</tns:doctorID>
+</tns:appointmentResult>

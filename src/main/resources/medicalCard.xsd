@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:appoint="http://it.nure.ua/clinic/appointment"
+           xmlns:res="http://it.nure.ua/clinic/appointmentResult"
+           targetNamespace="http://it.nure.ua/clinic/medicalCard"
+           xmlns="http://it.nure.ua/clinic/medicalCard"
+           elementFormDefault="qualified">
+    <xs:import namespace="http://it.nure.ua/clinic/appointment" schemaLocation="../appointment/appointment.xsd"/>
+    <xs:import namespace="http://it.nure.ua/clinic/appointmentResult" schemaLocation="../appointmentResult/appointmentResult.xsd"/>
+
+    <xs:element name="medicalCard">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cardNumber" type="cardNumber"/>
+                <xs:element name="personalInfo" type="personalInfo"/>
+                <xs:element name="workplace" type="xs:string"/>
+                <xs:element name="address" type="xs:string"/>
+                <xs:element name="email" type="email"/>
+                <xs:element name="phone" type="phoneNumber"/>
+                <xs:element name="identification" type="identification"/>
+                <xs:element name="appointments">
+                    <xs:complexType>
+                        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                           <xs:element ref="appoint:appointment"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="results">
+                    <xs:complexType>
+                        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                            <xs:element ref="res:appointmentResult"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="cardNumber">
+        <xs:restriction base="xs:int">
+            <xs:minExclusive value="0"/>
+            <xs:maxExclusive value="1000000"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="email">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="phoneNumber">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\+?[1-9][0-9]+"/>
+            <xs:length value="13"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="personalInfo">
+        <xs:all>
+            <xs:element name="firstName" type="xs:string"/>
+            <xs:element name="lastName" type="xs:string"/>
+            <xs:element name="patronymic" type="xs:string"/>
+            <xs:element name="birthDate" type="xs:date"/>
+            <xs:element name="gender">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Male"/>
+                        <xs:enumeration value="Female"/>
+                        <xs:enumeration value="Other"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="identification">
+        <xs:choice>
+            <xs:element name="passportNumber" type="xs:string"/>
+            <xs:element name="driverLicenseNumber" type="xs:string"/>
+            <xs:element name="idCardNumber" type="xs:string"/>
+        </xs:choice>
+    </xs:complexType>
+</xs:schema>
