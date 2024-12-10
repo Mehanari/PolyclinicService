@@ -3,10 +3,10 @@ package server;
 import java.util.Scanner;
 
 import jakarta.xml.ws.Endpoint;
-import server.service.DummyPolyclinicService;
+import server.service.SimplePolyclinicService;
 
 public class PolyclinicServer {
-    public static final Object implementor = new DummyPolyclinicService();
+    public static final Object implementor = new SimplePolyclinicService();
     public static final String ADDRESS = "http://localhost:9000/polyclinic";
 
     public static void main(String[] args) {

@@ -8,6 +8,7 @@ import jakarta.xml.ws.handler.soap.SOAPMessageContext;
 import jakarta.xml.ws.soap.SOAPFaultException;
 
 import javax.xml.namespace.QName;
+import java.util.Objects;
 import java.util.Set;
 
 public class SecurityHandler implements SOAPHandler<SOAPMessageContext> {
@@ -68,6 +69,9 @@ public class SecurityHandler implements SOAPHandler<SOAPMessageContext> {
             Unmarshaller unmarshaller = jaxb.createUnmarshaller();
             Node tokenElement = header.getChildElements(clientTokenQName).next();
             token = unmarshaller.unmarshal(tokenElement, String.class).getValue();
+            if (Objects.equals(token, TOKEN_BASE + 1)){ //Checking reset sequence
+                tokenCounter = 1;
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -109,6 +113,4 @@ public class SecurityHandler implements SOAPHandler<SOAPMessageContext> {
     public void close(MessageContext messageContext) {
         System.out.println("Handler closed.");
     }
-
-
 }
